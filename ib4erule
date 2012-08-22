@@ -12,7 +12,7 @@ echo "Words that follow 'i before e except after c': $ceiwords"
 set ciewords=`grep -ic cie .words`
 echo "Words that don't follow it: $ciewords"
 
-echo "that's a lot of 'exceptions', what if we take out dupes? No words ending in 'ier', 'iest', 'ed', 'ing' or 's'."
+echo "that's a lot of 'exceptions', what if we take out dupes? No words ending in 'ier', 'iest', 'ed', 'ing', 'tion' or 's'."
 
 set iewords0=`grep -ic ie .wordsNoDupe`
 echo "Words with ie: $iewords0"
@@ -48,3 +48,13 @@ echo "Words that follow 'i before e except after c': $ceiwords2"
 set ciewords2=`grep -ic cie .wordsNoHyphen`
 echo "Words that don't follow it: $ciewords2"
 
+#calculate numbers for analytics
+@ t = $ciewords2 - $ceiwords2
+@ s = $t * 100
+@ ciepercent = $s / $ceiwords2
+echo "the differnce between words that follow cei vs cie is $ciepercent%"
+@ nocwords = $iewords2 + $eiwords2 - $ceiwords2 - $ciewords2
+@ ienoc = $iewords2 - $ciewords2
+@ u = $ienoc * 100
+@ iepercent = $u / $nocwords 
+echo "$iepercent% of words follow the 'i before e' part of the rule"

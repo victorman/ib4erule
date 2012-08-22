@@ -4,7 +4,7 @@ summary of words files:
 grep -iP -e '(ie|ei)' /usr/share/dict/words > .words
 
 .wordsNoDupe was then generated using .words
-grep -ivP -e '(ier|iest|ed|ing|s)$' .words > .wordsNoDupe
+grep -ivP -e '(ier|iest|ed|ing|s|tion)$' .words > .wordsNoDupe
 
 .wordsNoCaps was then generated:
 grep -vP -e '^[A-Z]' .wordsNoDupe > .wordsNoCaps
