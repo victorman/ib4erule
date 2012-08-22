@@ -1,0 +1,10 @@
+summary of words files:
+
+.words was generated using:
+grep -iP -e '(ie|ei)' /usr/share/dict/words > .words
+
+.wordsNoDupe was then generated using .words
+grep -ivP -e '(ier|iest|ed|ing|s)$' .words > .wordsNoDupe
+
+.wordsNoCaps was then generated:
+grep -vP -e '^[A-Z]' .wordsNoDupe > .wordsNoCaps
