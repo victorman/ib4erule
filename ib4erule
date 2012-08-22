@@ -2,48 +2,49 @@
 
 #word file is arg $1
 
-echo "Words with ie:"
 set iewords=`grep -ic ie .words`
-echo $iewords
-echo "Words with ei:"
+echo "Words with ie: $iewords"
 set eiwords=`grep -ic ei .words`
-echo $eiwords
+echo "Words with ei: $eiwords"
 
-echo "Words that follow 'i before e except after c':"
 set ceiwords=`grep -ic cei .words`
-echo $ceiwords
-echo "Words that don't follow it:"
+echo "Words that follow 'i before e except after c': $ceiwords"
 set ciewords=`grep -ic cie .words`
-echo $ciewords
+echo "Words that don't follow it: $ciewords"
 
 echo "that's a lot of 'exceptions', what if we take out dupes? No words ending in 'ier', 'iest', 'ed', 'ing' or 's'."
 
-echo "Words with ie:"
 set iewords0=`grep -ic ie .wordsNoDupe`
-echo $iewords0
-echo "Words with ei:"
+echo "Words with ie: $iewords0"
 set eiwords0=`grep -ic ei .wordsNoDupe`
-echo $eiwords0
+echo "Words with ei: $eiwords0"
 
-echo "Words that follow 'i before e except after c':"
 set ceiwords0=`grep -ic cei .wordsNoDupe`
-echo $ceiwords0
-echo "Words that don't follow it:"
+echo "Words that follow 'i before e except after c': $ceiwords0"
 set ciewords0=`grep -ic cie .wordsNoDupe`
-echo $ciewords0
+echo "Words that don't follow it: $ciewords0"
 
 echo "ok let's take out proper nouns. No words starting in a cap."
-echo "Words with ie:"
-set iewords1=`grep -ic ie .wordsNoCaps`
-echo $iewords1
-echo "Words with ei:"
-set eiwords1=`grep -ic ei .wordsNoCaps`
-echo $eiwords1
 
-echo "Words that follow 'i before e except after c':"
+set iewords1=`grep -ic ie .wordsNoCaps`
+echo "Words with ie: $iewords1"
+set eiwords1=`grep -ic ei .wordsNoCaps`
+echo "Words with ei: $eiwords1"
+
 set ceiwords1=`grep -ic cei .wordsNoCaps`
-echo $ceiwords1
-echo "Words that don't follow it:"
+echo "Words that follow 'i before e except after c': $ceiwords1"
 set ciewords1=`grep -ic cie .wordsNoCaps`
-echo $ciewords1
+echo "Words that don't follow it: $ciewords1"
+
+echo "there's still some duplicates with hyphenated words. let's take those out:"
+
+set iewords2=`grep -ic ie .wordsNoHyphen`
+echo "Words with ie: $iewords2"
+set eiwords2=`grep -ic ei .wordsNoHyphen`
+echo "Words with ei: $eiwords2"
+
+set ceiwords2=`grep -ic cei .wordsNoHyphen`
+echo "Words that follow 'i before e except after c': $ceiwords2"
+set ciewords2=`grep -ic cie .wordsNoHyphen`
+echo "Words that don't follow it: $ciewords2"
 

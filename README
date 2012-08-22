@@ -8,3 +8,6 @@ grep -ivP -e '(ier|iest|ed|ing|s)$' .words > .wordsNoDupe
 
 .wordsNoCaps was then generated:
 grep -vP -e '^[A-Z]' .wordsNoDupe > .wordsNoCaps
+
+.wordsNoHyphen:
+grep -vP -e '-' .wordsNoCaps > .wordsNoHyphen
