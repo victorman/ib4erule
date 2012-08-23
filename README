@@ -16,3 +16,5 @@ Known issues:
 some deeper analysis needs to happen.
 I realise that with the dupe ommissions there are some legitimate words being removed that are not actually duplicates of anything.
 I'm not sure how big that number is though.
+
+there is a large chunk of words that are legitimate followers of i before e excluded by omitting 'ier' and 'iest'.
