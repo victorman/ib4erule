@@ -13,6 +13,9 @@ grep -vP -e '^[A-Z]' .wordsNoDupe > .wordsNoCaps
 grep -vP -e '-' .wordsNoCaps > .wordsNoHyphen
 
 Known issues:
+
 some deeper analysis needs to happen.
 I realise that with the dupe ommissions there are some legitimate words being removed that are not actually duplicates of anything.
 I'm not sure how big that number is though.
+
+there are a large chunk of ie words ommitted by the including 'ier' and 'iest' in the dupe exclusion, which legitimately follow the i before e rule.
